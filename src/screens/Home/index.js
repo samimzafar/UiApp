@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import {View, TextInput, Text, TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {FlatListIndicator} from '@fanchenbao/react-native-scroll-indicator';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+// import FontAwesome from 'react-native-vector-icons/FontAwesome';
+// import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 const data = [
   'Board games revival',
   'Comedy trends',
@@ -53,8 +53,8 @@ export default function CustomDropdown() {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-      <FontAwesome name="rocket" size={80} color="white" />
-      <MaterialIcons name="credit-card" size={80} color="white" />
+      {/* <FontAwesome name="rocket" size={80} color="white" />
+      <MaterialIcons name="credit-card" size={80} color="white" /> */}
       <LinearGradient
         colors={[
           'rgba(101,71,219,1)',
