@@ -1,6 +1,6 @@
 import {ActivityIndicator, Text, TouchableOpacity, View} from 'react-native';
 import FontFamily from '../../utils/FontFamily';
-import {AppColors} from '../../utils/ColorConstants';
+import {AppColors} from '../../utils/AppColors';
 import {height, width, totalSize} from 'react-native-dimension';
 export const ViewButton = ({onPressHanlder}) => {
   return (

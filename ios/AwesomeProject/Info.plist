@@ -36,6 +36,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Poppins-Bold.ttf</string>
+		<string>AntDesign.ttf</string>
 		<string>Poppins-Regular.ttf</string>
 		<string>AntDesign.ttf</string>
 		<string>Entypo.ttf</string>
