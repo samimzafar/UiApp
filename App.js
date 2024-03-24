@@ -1,7 +1,19 @@
 import * as React from 'react';
 import {Navigation} from './src/navigation';
-import {Home} from './src/screens/Home';
+import CustomDropdown from './src/screens/Home';
 function App() {
-  return <Home />;
+  let list = [
+    'Board games revival',
+    'Comedy trends',
+    'Amusement parks',
+    'Escape rooms',
+    'Street performances',
+    'Online challenges',
+    'Festivals impact',
+    'Crafting movement',
+    'Social gaming',
+    'Virtual reality',
+  ];
+  return <CustomDropdown />;
 }
 export default App;

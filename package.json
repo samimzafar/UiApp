@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@react-native-community/cli-doctor": "^13.6.3",
+    "@fanchenbao/react-native-scroll-indicator": "^0.2.2",
     "react": "18.2.0",
     "react-native": "0.73.2",
     "react-native-dimension": "^1.0.6",
