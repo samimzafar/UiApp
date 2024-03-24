@@ -37,6 +37,13 @@
 	<array>
 		<string>Poppins-Bold.ttf</string>
 		<string>Poppins-Regular.ttf</string>
+		<string>AntDesign.ttf</string>
+		<string>Entypo.ttf</string>
+		<string>EvilIcons.ttf</string>
+		<string>FontAwesome.ttf</string>
+		<string>MaterialIcons.ttf</string>
+		<string>Zocial.ttf</string>
+		<string>Foundation.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
