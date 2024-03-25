@@ -1,4 +1,4 @@
-import {Image, StyleSheet, View} from 'react-native';
+import {Image} from 'react-native';
 import React from 'react';
 import {ImageConst} from '../../assets/images';
 import {styles} from './style';

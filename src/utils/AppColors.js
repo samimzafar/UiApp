@@ -25,4 +25,5 @@ export const AppColors = {
   ],
   darkBlack: 'rgba(9, 9, 13, 1)',
   blackGradient: ['rgba(9, 9, 13, 1)', 'rgba(9, 9, 13, 1)'],
+  blackGrey3: 'rgba(58, 57, 64, 0.3)',
 };

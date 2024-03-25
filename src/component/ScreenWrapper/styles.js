@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {AppColors} from '../../utils/AppColors';
-import {width, height} from 'react-native-dimension';
+import {width} from 'react-native-dimension';
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: AppColors.blackScreen,

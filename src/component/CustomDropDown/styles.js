@@ -3,6 +3,13 @@ import {height, width, totalSize} from 'react-native-dimension';
 import {AppColors} from '../../utils/AppColors';
 import FontFamily from '../../utils/FontFamily';
 export const styles = StyleSheet.create({
+  mainContainer: {
+    position: 'absolute',
+    zIndex: 999,
+    top: height(53),
+    left: width(5),
+    width: width(90),
+  },
   question: {
     color: AppColors.white,
     fontFamily: FontFamily.PoppinsBold,

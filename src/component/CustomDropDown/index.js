@@ -6,7 +6,6 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {AppColors} from '../../utils/AppColors';
 import {styles} from './styles';
 import useCustomDropdown from '../../hooks/useCustomDropDown';
-import {height, width} from 'react-native-dimension';
 const CustomDropdown = ({selectedTopic}) => {
   const {
     searchText,
@@ -20,14 +19,7 @@ const CustomDropdown = ({selectedTopic}) => {
   } = useCustomDropdown(selectedTopic);
 
   return (
-    <View
-      style={{
-        position: 'absolute',
-        zIndex: 999,
-        top: height(53),
-        left: width(5),
-        width: width(90),
-      }}>
+    <View style={styles.mainContainer}>
       <Text style={styles.question}>
         Which type of "{selectedTopic}" content are you{`\n`} creating?
       </Text>
