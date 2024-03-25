@@ -12,6 +12,7 @@ import {topicList} from '../../dummyData';
 import CustomDropdown from '../../component/CustomDropDown';
 import TextComponent from '../../component/TextComponent';
 import SliderComponent from '../../component/Slider';
+import CustomButton from '../../component/CustomButton';
 const Home = () => {
   return (
     <ScreenWrapper>
@@ -22,6 +23,7 @@ const Home = () => {
       <OptionSelector options={topicList} />
       <CustomDropdown />
       <SliderComponent />
+      <CustomButton />
     </ScreenWrapper>
   );
 };
