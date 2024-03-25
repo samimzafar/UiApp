@@ -25,7 +25,7 @@ const data = [
 export default function CustomDropdown({listindData, selectedTitle}) {
   const [searchText, setSearchText] = useState('');
   const [filteredData, setFilteredData] = useState(data);
-  const [selectedItem, setSelectedItem] = useState('');
+  const [selectedItem, setSelectedItem] = useState('Select');
   const [showDropdown, setShowDropdown] = useState(false);
 
   const handleSearch = text => {
@@ -73,6 +73,7 @@ export default function CustomDropdown({listindData, selectedTitle}) {
               onChangeText={handleSearch}
               onFocus={clearSelection}
               style={styles.textInputStyle}
+              editable={showDropdown == false ? false : true}
             />
             <AntDesign
               name={showDropdown ? 'up' : 'down'}
