@@ -26,7 +26,7 @@ const Home = () => {
         setSelectedOption={setSelectedOption}
       />
       <CustomDropdown selectedTopic={selectedOption} />
-      <View style={{height: height(12)}} />
+      <View style={styles.heightSpacer(12)} />
       <SliderComponent />
       <CustomButton />
     </ScreenWrapper>
