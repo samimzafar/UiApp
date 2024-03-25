@@ -24,4 +24,7 @@ A step by step series of examples that tell you how to get a development environ
    git clone https://github.com/samimzafar/UiApp
 2. **Install Node Modules:**
    ```bash
-   npm install   
+   npm install
+3. **Once Node Modules installed:**
+   ```bash
+   cd ios && pod install && cd .. ( No need this for android )
