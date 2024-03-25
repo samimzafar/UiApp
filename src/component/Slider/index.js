@@ -1,31 +1,13 @@
-import React, {useState, useRef} from 'react';
-import {View, StyleSheet, PanResponder, Animated, Text} from 'react-native';
+import React from 'react';
+import {View, Text, StyleSheet, Animated} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {styles} from './styles';
 import {AppColors} from '../../utils/AppColors';
-import {width, totalSize} from 'react-native-dimension';
+import useSlider from '../../hooks/useSlider';
 
 const SliderComponent = () => {
-  const [sliderValue, setSliderValue] = useState(100);
-  const circlePosition = useRef(new Animated.Value(0)).current;
-
-  const panResponder = PanResponder.create({
-    onStartShouldSetPanResponder: () => true,
-    onPanResponderMove: (event, gesture) => {
-      let newValue = sliderValue + (gesture.dx * 900) / 300;
-      newValue = Math.max(100, Math.min(newValue, 1000));
-      setSliderValue(newValue);
-      const newPosition = ((newValue - 100) / 900) * (width(62) - totalSize(2));
-      circlePosition.setValue(newPosition);
-    },
-  });
-
-  const animatedSliderStyle = {
-    width: circlePosition.interpolate({
-      inputRange: [0, width(62) - totalSize(2)],
-      outputRange: ['0%', '100%'],
-    }),
-  };
+  const {sliderValue, panResponder, animatedSliderStyle, circlePosition} =
+    useSlider();
 
   return (
     <View style={styles.container}>
