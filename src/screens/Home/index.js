@@ -6,11 +6,12 @@ import Header from '../../component/CustomHeader';
 import {width, height, totalSize} from 'react-native-dimension';
 import {ImageConst} from '../../assets/images';
 import ProgressBar from '../../component/ProgressBar';
-import {TextComponent} from '../../component/TextComponent';
 import {styles} from './styles';
 import OptionSelector from '../../component/OptionSelector';
 import {topicList} from '../../dummyData';
 import CustomDropdown from '../../component/CustomDropDown';
+import TextComponent from '../../component/TextComponent';
+import SliderComponent from '../../component/Slider';
 const Home = () => {
   return (
     <ScreenWrapper>
@@ -20,6 +21,7 @@ const Home = () => {
       <View style={styles.horizentalLiner} />
       <OptionSelector options={topicList} />
       <CustomDropdown />
+      <SliderComponent />
     </ScreenWrapper>
   );
 };

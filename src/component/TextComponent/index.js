@@ -1,6 +1,6 @@
 import {Text, View} from 'react-native';
 import {styles} from './style';
-export const TextComponent = () => {
+const TextComponent = () => {
   return (
     <View style={styles.viewContainer}>
       <Text style={styles.textLabel}>Content type</Text>
@@ -10,3 +10,4 @@ export const TextComponent = () => {
     </View>
   );
 };
+export default TextComponent;

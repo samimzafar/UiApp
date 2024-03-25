@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textInputView: {
-    backgroundColor: AppColors.blackDarkGreyOpacity,
+    backgroundColor: AppColors.blackGrey,
     borderRadius: 8,
     flexDirection: 'row',
     height: height(5.65),

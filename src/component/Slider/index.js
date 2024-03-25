@@ -2,15 +2,15 @@ import React, {useState, useRef} from 'react';
 import {View, StyleSheet, PanResponder, Animated, Text} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {styles} from './styles';
-
-export const SliderComponent = ({navigation}) => {
+import {AppColors} from '../../utils/AppColors';
+import {height, width, totalSize} from 'react-native-dimension';
+import FontFamily from '../../utils/FontFamily';
+const SliderComponent = ({navigation}) => {
   const [sliderValue, setSliderValue] = useState(100);
-  // const circlePosition = useRef(new Animated.Value(0)).current; // Initial position set to 0
   const circlePosition = useRef(
     new Animated.Value(((sliderValue - 100) / 900) * 300),
-  ).current; // Adjusted initial position
+  ).current;
 
-  // PanResponder for handling touch events
   const panResponder = PanResponder.create({
     onStartShouldSetPanResponder: () => true,
     onPanResponderMove: (event, gesture) => {
@@ -21,43 +21,82 @@ export const SliderComponent = ({navigation}) => {
     },
   });
 
-  // Animated styles for the active slider line
   const animatedSliderStyle = {
     width: circlePosition.interpolate({
-      inputRange: [0, 300],
-      outputRange: ['0%', '100%'], // Width will animate from 0% to 100%
+      inputRange: [0, 280],
+      outputRange: ['0%', '100%'],
     }),
   };
 
   return (
     <View style={styles.container}>
-      <View style={styles.sliderLineContainer}>
-        <Animated.View style={[styles.activeSliderLine, animatedSliderStyle]}>
-          <LinearGradient
-            colors={['rgba(82, 63, 215, 1)', 'rgba(255, 125, 255, 1)']}
-            start={{x: 0.0, y: 0.5}}
-            end={{x: 1.0, y: 0.5}}
-            style={StyleSheet.absoluteFill} // Fill the animated container
-          />
-        </Animated.View>
-        <View style={styles.inactiveSliderLine} />
-      </View>
-      <Animated.View
-        {...panResponder.panHandlers}
-        style={[
-          styles.circleContainer,
-          {
-            transform: [{translateX: circlePosition}],
-          },
-        ]}>
-        <View style={styles.circle}>
-          <Text style={styles.circleText}>{Math.round(sliderValue)}</Text>
+      <Text style={styles.question}>
+        Set the number of words for output text.
+      </Text>
+      <View
+        style={{
+          backgroundColor: AppColors.darkBlack,
+          paddingHorizontal: width(4),
+          paddingVertical: height(1.6),
+          borderRadius: totalSize(1.5),
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}>
+        <Text
+          style={{
+            color: AppColors.white,
+            fontFamily: FontFamily.PoppinsBold,
+            fontSize: totalSize(1.4),
+          }}>
+          100
+        </Text>
+        <View style={styles.sliderLineContainer}>
+          <Animated.View style={[styles.activeSliderLine, animatedSliderStyle]}>
+            <LinearGradient
+              colors={AppColors.bluePinkPurpleGradient}
+              start={{x: 0.0, y: 0.5}}
+              end={{x: 1.0, y: 0.5}}
+              style={StyleSheet.absoluteFill}
+            />
+          </Animated.View>
+          <View style={styles.inactiveSliderLine} />
         </View>
-      </Animated.View>
-      <View style={styles.labels}>
-        <Text style={styles.label}>100</Text>
-        <Text style={styles.label}>1000</Text>
+        <Text
+          style={{
+            color: AppColors.white,
+            fontFamily: FontFamily.PoppinsBold,
+            fontSize: totalSize(1.4),
+          }}>
+          1000
+        </Text>
+
+        <Animated.View
+          {...panResponder.panHandlers}
+          style={[
+            styles.circleContainer,
+            {
+              transform: [{translateX: circlePosition}],
+            },
+          ]}>
+          <View
+            style={{
+              paddingVertical: height(0.5),
+              borderRadius: totalSize(2),
+              width: width(13),
+              overflow: 'hidden',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: AppColors.bluePurple,
+              position: 'absolute',
+              bottom: height(5),
+            }}>
+            <Text style={styles.circleText}>{Math.round(sliderValue)}</Text>
+          </View>
+          <View style={styles.circle}></View>
+        </Animated.View>
       </View>
     </View>
   );
 };
+export default SliderComponent;

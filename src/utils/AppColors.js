@@ -2,7 +2,7 @@ export const AppColors = {
   transparent: 'transparent',
   whiteGrey: 'rgba(208, 207, 209, 1)',
   white: 'rgba(255, 255, 255, 1)',
-  red: 'red ',
+  red: 'red',
   blackScreen: 'rgba(18, 17, 26, 1)',
   bluePinkPurpleGradient: [
     'rgba(147,87,230,1)',
@@ -23,4 +23,5 @@ export const AppColors = {
     'rgba(192,102,240,1)',
     'rgba(192,102,240,1)',
   ],
+  darkBlack: 'rgba(9, 9, 13, 1)',
 };
