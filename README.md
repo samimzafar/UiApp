@@ -30,6 +30,5 @@ A step by step series of examples that tell you how to get a development environ
    cd ios && pod install && cd .. ( No need this for android )
 4. **Run the Application ( ios/Android ) via Xcode/Android Studio:**
    ```bash
-  open Xcode select .xcworkspace inside the ios folder and run it on Xcode, it will run the ios app.
-  open Android Studio select the Android folder and run the app from Android Studio.
+  open Xcode select .xcworkspace inside the ios folder and run it on Xcode, it will run the ios app
 
