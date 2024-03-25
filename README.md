@@ -22,3 +22,6 @@ A step by step series of examples that tell you how to get a development environ
 1. **Clone the repo:**
    ```bash
    git clone https://github.com/samimzafar/UiApp
+2. **Install Node Modules:**
+   ```bash
+   npm install   
