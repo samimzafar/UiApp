@@ -1,6 +1,6 @@
 import * as React from 'react';
-import CustomDropdown from './src/screens/Home';
+import Home from './src/screens/Home';
 function App() {
-  return <CustomDropdown />;
+  return <Home />;
 }
 export default App;
