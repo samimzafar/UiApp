@@ -4,18 +4,18 @@ import {height, totalSize} from 'react-native-dimension';
 import {AppColors} from '../../utils/AppColors';
 export const styles = StyleSheet.create({
   viewContainer: {
-    height: height(10),
+    height: height(9),
     marginTop: height(1),
   },
   textLabel: {
     fontFamily: FontFamily.PoppinsBold,
-    fontSize: totalSize(2),
+    fontSize: totalSize(2.2),
     lineHeight: height(3.5),
     color: AppColors.white,
   },
   textDescription: {
     fontFamily: FontFamily.PoppinsRegular,
-    fontSize: totalSize(1.6),
+    fontSize: totalSize(1.5),
     color: AppColors.whiteGrey,
   },
 });

@@ -7,6 +7,6 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   childrenContainer: {
-    paddingHorizontal: width(4),
+    paddingHorizontal: width(5),
   },
 });

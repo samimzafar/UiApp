@@ -4,15 +4,14 @@ import {height, totalSize, width} from 'react-native-dimension';
 import FontFamily from '../../utils/FontFamily';
 export const styles = StyleSheet.create({
   container: {
-    // backgroundColor: AppColors.bl, // Adjust to match your theme
-    // padding: 20,
     marginTop: height(3),
+    height: height(21),
   },
   question: {
     color: AppColors.white,
     fontFamily: FontFamily.PoppinsBold,
-    fontSize: totalSize(1.8),
-    marginBottom: height(2.7),
+    fontSize: totalSize(1.5),
+    marginBottom: height(2.8),
   },
   optionsContainer: {
     flexDirection: 'row',
@@ -22,7 +21,7 @@ export const styles = StyleSheet.create({
     borderWidth: width(0.2),
     borderColor: AppColors.white,
     borderRadius: totalSize(10),
-    paddingVertical: height(1.6),
+    paddingVertical: height(1.3),
     paddingHorizontal: width(6),
     marginBottom: height(1.7),
     marginRight: width(3),
@@ -36,6 +35,5 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: FontFamily.PoppinsRegular,
     fontSize: totalSize(1.6),
-    // marginBottom: height(2.5),
   },
 });

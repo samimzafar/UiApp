@@ -3,6 +3,8 @@ import {View, TextInput, Text, TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {FlatListIndicator} from '@fanchenbao/react-native-scroll-indicator';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import {AppColors} from '../../utils/AppColors';
+import {styles} from './styles';
 
 const data = [
   'Board games revival',
@@ -20,7 +22,7 @@ const data = [
   'Bilingual benefits',
 ];
 
-export default function CustomDropdown() {
+export default function CustomDropdown({listindData, selectedTitle}) {
   const [searchText, setSearchText] = useState('');
   const [filteredData, setFilteredData] = useState(data);
   const [selectedItem, setSelectedItem] = useState('');
@@ -51,97 +53,51 @@ export default function CustomDropdown() {
   };
 
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: 'green',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
+    <View>
+      <Text style={styles.question}>
+        Which type of “Education“content are you creating?
+      </Text>
       <LinearGradient
-        colors={[
-          'rgba(101,71,219,1)',
-          'rgba(101,71,219,1)',
-          'rgba(147,87,230,1)',
-          'rgba(147,87,230,1)',
-          'rgba(192,102,240,1)',
-          'rgba(192,102,240,1)',
-        ]}
+        colors={AppColors.bluePinkPurpleGradient}
         start={{x: 0, y: 0}}
         end={{x: 1, y: 0}}
-        style={{
-          borderRadius: 8,
-          height: 46,
-          width: '80%',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
+        style={styles.lineaGradientStyle}>
         <TouchableOpacity onPress={toggleDropdown}>
-          <View
-            style={{
-              backgroundColor: 'rgba(30, 29, 37, 1)',
-              borderRadius: 8,
-              flexDirection: 'row',
-              height: 42,
-              alignItems: 'center',
-              paddingHorizontal: 15,
-              width: '99%',
-            }}>
+          <View style={styles.textInputView}>
             <TextInput
               placeholder="Search"
-              placeholderTextColor={'white'}
-              selectionColor="white"
-              cursorColor="white"
+              placeholderTextColor={AppColors.white}
+              selectionColor={AppColors.white}
+              cursorColor={AppColors.white}
               value={selectedItem ? selectedItem : searchText}
               onChangeText={handleSearch}
-              onFocus={clearSelection} // Clear selection when input is focused
-              style={{
-                flex: 1,
-                color: 'white',
-                // backgroundColor: 'white',
-              }}
+              onFocus={clearSelection}
+              style={styles.textInputStyle}
             />
             <AntDesign
               name={showDropdown ? 'up' : 'down'}
               size={20}
-              color="white"
+              color={AppColors.white}
             />
           </View>
         </TouchableOpacity>
       </LinearGradient>
       {showDropdown && (
-        <View
-          style={{
-            backgroundColor: 'rgba(30, 29, 37, .6)',
-            borderRadius: 10,
-            marginTop: 10,
-            width: '80%',
-          }}>
+        <View style={styles.dropdownListView}>
           <FlatListIndicator
             flatListProps={{
               alwaysBounceVertical: true,
-              style: {
-                height: 400,
-              },
+              style: styles.dropdownListHeight,
               data: filteredData,
               renderItem: ({item}) => (
                 <TouchableOpacity onPress={() => handleItemPress(item)}>
-                  <Text
-                    style={{
-                      color: 'white',
-                      padding: 10,
-                    }}>
-                    {item}
-                  </Text>
+                  <Text style={styles.listTitleStyle}>{item}</Text>
                 </TouchableOpacity>
               ),
             }}
             horizontal={false}
             position="right"
-            indStyle={{
-              width: 5,
-              backgroundColor: 'rgba(100, 112, 218, 1)',
-            }}
+            indStyle={styles.scrollIndicatorStyle}
           />
         </View>
       )}

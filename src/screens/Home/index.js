@@ -10,6 +10,7 @@ import {TextComponent} from '../../component/TextComponent';
 import {styles} from './styles';
 import OptionSelector from '../../component/OptionSelector';
 import {topicList} from '../../dummyData';
+import CustomDropdown from '../../component/CustomDropDown';
 const Home = () => {
   return (
     <ScreenWrapper>
@@ -18,6 +19,7 @@ const Home = () => {
       <TextComponent />
       <View style={styles.horizentalLiner} />
       <OptionSelector options={topicList} />
+      <CustomDropdown />
     </ScreenWrapper>
   );
 };
