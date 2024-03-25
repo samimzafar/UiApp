@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     color: AppColors.white,
     fontFamily: FontFamily.PoppinsBold,
     fontSize: totalSize(1.5),
-    marginBottom: height(2),
+    marginBottom: height(4),
     lineHeight: height(2.8),
   },
   sliderLineContainer: {
@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
   },
   circleText: {
     color: AppColors.white,
-    fontSize: totalSize(2),
+    fontSize: totalSize(1.6),
     fontFamily: FontFamily.PoppinsRegular,
   },
 });

@@ -89,7 +89,7 @@ const SliderComponent = ({navigation}) => {
               justifyContent: 'center',
               backgroundColor: AppColors.bluePurple,
               position: 'absolute',
-              bottom: height(5),
+              bottom: height(3),
             }}>
             <Text style={styles.circleText}>{Math.round(sliderValue)}</Text>
           </View>

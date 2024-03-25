@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     backgroundColor: AppColors.blackGrey,
     borderRadius: 8,
     flexDirection: 'row',
-    height: height(5.65),
+    height: height(5.5),
     alignItems: 'center',
     paddingHorizontal: width(3.5),
     width: width(89),
@@ -30,12 +30,12 @@ export const styles = StyleSheet.create({
     color: AppColors.white,
   },
   dropdownListView: {
-    backgroundColor: AppColors.blackDarkGrey,
+    backgroundColor: AppColors.blackDarkGreyOpacity,
     borderRadius: totalSize(1),
     marginTop: height(1),
   },
   dropdownListHeight: {
-    height: height(16),
+    height: height(16.5),
   },
   listTitleStyle: {
     color: AppColors.white,

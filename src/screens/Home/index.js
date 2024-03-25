@@ -11,6 +11,7 @@ import TextComponent from '../../component/TextComponent';
 import SliderComponent from '../../component/Slider';
 import CustomButton from '../../component/CustomButton';
 import {Global_Const} from '../../utils/Const';
+import {height, width} from 'react-native-dimension';
 const Home = () => {
   const [selectedOption, setSelectedOption] = useState(Global_Const.FUN);
   return (
@@ -25,6 +26,7 @@ const Home = () => {
         setSelectedOption={setSelectedOption}
       />
       <CustomDropdown selectedTopic={selectedOption} />
+      <View style={{height: height(12)}} />
       <SliderComponent />
       <CustomButton />
     </ScreenWrapper>
