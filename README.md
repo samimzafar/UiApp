@@ -14,7 +14,7 @@
 -
 ## Usage
 
-You can start by cloning this repository and using [code-repo-link](https://github.com/samimzafar/UiApp). In the current state of this project, it should give you no issues at all, just run the script, and install your node modules.
+You can start by cloning this repository and using [code-repo-link](https://github.com/samimzafar/UiApp). Clone the project from this link .In the current state of this project, it should give you no issues at all, just run the script, and install your node modules.
 
 After that you should proceed as with project:
 
