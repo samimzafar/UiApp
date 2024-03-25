@@ -1,9 +1,10 @@
 export const AppColors = {
-  lightPinkGrayGradient: ['rgba(143, 89, 177, 0.91)', 'rgba(95, 126, 190, .9)'],
   transparent: 'transparent',
-  whiteGrey: 'rgba(256, 256, 256, 0.6)',
+  whiteGrey: 'rgba(208, 207, 209, 1)',
   white: 'rgba(256, 256, 256, 1)',
-  goldYellow: '#FECC53',
-  black3: 'rgba(0,0,0,.3)',
-  red: 'rgba(255, 0, 0, 0.5) ',
+  red: 'red ',
+  blackScreen: 'rgba(18, 17, 26, 1)',
+  pinkPurpleGradient: ['rgba(82, 63, 215, 1)', 'rgba(255, 125, 255, 1)'],
+  darkPink: "'rgba(255, 125, 255, 1)'",
+  blackGrey: 'rgba(58, 57, 64, 1)',
 };
