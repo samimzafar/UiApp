@@ -4,14 +4,28 @@ import {height, width, totalSize} from 'react-native-dimension';
 import FontFamily from '../../utils/FontFamily';
 export const styles = StyleSheet.create({
   container: {
-    marginTop: height(3),
+    marginTop: height(4.5),
   },
   question: {
     color: AppColors.white,
     fontFamily: FontFamily.PoppinsBold,
     fontSize: totalSize(1.5),
-    marginBottom: height(4),
+    marginBottom: height(3),
     lineHeight: height(2.8),
+  },
+  sliderLineVew: {
+    backgroundColor: AppColors.darkBlack,
+    paddingHorizontal: width(4),
+    paddingVertical: height(2),
+    borderRadius: totalSize(1.5),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  sliderPointStyle: {
+    color: AppColors.white,
+    fontFamily: FontFamily.PoppinsBold,
+    fontSize: totalSize(1.4),
   },
   sliderLineContainer: {
     flexDirection: 'row',
@@ -29,19 +43,39 @@ export const styles = StyleSheet.create({
   },
   circleContainer: {
     position: 'absolute',
-    left: width(5),
+    left: width(13),
+  },
+  circleOuterView: {
+    width: totalSize(3),
+    height: totalSize(3),
+    borderRadius: totalSize(10),
+    borderColor: AppColors.darkPink,
+    borderWidth: totalSize(0.1),
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   circle: {
-    width: totalSize(2),
-    height: totalSize(2),
+    width: totalSize(1.7),
+    height: totalSize(1.7),
     borderRadius: totalSize(4),
     backgroundColor: AppColors.darkPink,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  circleText: {
+  sliderValueInCircleStyle: {
+    paddingVertical: height(0.5),
+    borderRadius: totalSize(2),
+    width: width(12),
+    overflow: 'hidden',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: AppColors.bluePurple,
+    position: 'absolute',
+    bottom: height(4),
+  },
+  sliderTextValueStyle: {
     color: AppColors.white,
-    fontSize: totalSize(1.6),
+    fontSize: totalSize(1.4),
     fontFamily: FontFamily.PoppinsRegular,
   },
 });

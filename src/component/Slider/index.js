@@ -3,13 +3,11 @@ import {View, StyleSheet, PanResponder, Animated, Text} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {styles} from './styles';
 import {AppColors} from '../../utils/AppColors';
-import {height, width, totalSize} from 'react-native-dimension';
-import FontFamily from '../../utils/FontFamily';
-const SliderComponent = ({navigation}) => {
+import {width, totalSize} from 'react-native-dimension';
+
+const SliderComponent = () => {
   const [sliderValue, setSliderValue] = useState(100);
-  const circlePosition = useRef(
-    new Animated.Value(((sliderValue - 100) / 900) * 300),
-  ).current;
+  const circlePosition = useRef(new Animated.Value(0)).current;
 
   const panResponder = PanResponder.create({
     onStartShouldSetPanResponder: () => true,
@@ -17,13 +15,14 @@ const SliderComponent = ({navigation}) => {
       let newValue = sliderValue + (gesture.dx * 900) / 300;
       newValue = Math.max(100, Math.min(newValue, 1000));
       setSliderValue(newValue);
-      circlePosition.setValue(((newValue - 100) / 900) * 300);
+      const newPosition = ((newValue - 100) / 900) * (width(62) - totalSize(2));
+      circlePosition.setValue(newPosition);
     },
   });
 
   const animatedSliderStyle = {
     width: circlePosition.interpolate({
-      inputRange: [0, 280],
+      inputRange: [0, width(62) - totalSize(2)],
       outputRange: ['0%', '100%'],
     }),
   };
@@ -33,24 +32,8 @@ const SliderComponent = ({navigation}) => {
       <Text style={styles.question}>
         Set the number of words for output text.
       </Text>
-      <View
-        style={{
-          backgroundColor: AppColors.darkBlack,
-          paddingHorizontal: width(4),
-          paddingVertical: height(1.6),
-          borderRadius: totalSize(1.5),
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}>
-        <Text
-          style={{
-            color: AppColors.white,
-            fontFamily: FontFamily.PoppinsBold,
-            fontSize: totalSize(1.4),
-          }}>
-          100
-        </Text>
+      <View style={styles.sliderLineVew}>
+        <Text style={styles.sliderPointStyle}>100</Text>
         <View style={styles.sliderLineContainer}>
           <Animated.View style={[styles.activeSliderLine, animatedSliderStyle]}>
             <LinearGradient
@@ -62,15 +45,7 @@ const SliderComponent = ({navigation}) => {
           </Animated.View>
           <View style={styles.inactiveSliderLine} />
         </View>
-        <Text
-          style={{
-            color: AppColors.white,
-            fontFamily: FontFamily.PoppinsBold,
-            fontSize: totalSize(1.4),
-          }}>
-          1000
-        </Text>
-
+        <Text style={styles.sliderPointStyle}>1000</Text>
         <Animated.View
           {...panResponder.panHandlers}
           style={[
@@ -79,24 +54,18 @@ const SliderComponent = ({navigation}) => {
               transform: [{translateX: circlePosition}],
             },
           ]}>
-          <View
-            style={{
-              paddingVertical: height(0.5),
-              borderRadius: totalSize(2),
-              width: width(13),
-              overflow: 'hidden',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: AppColors.bluePurple,
-              position: 'absolute',
-              bottom: height(3),
-            }}>
-            <Text style={styles.circleText}>{Math.round(sliderValue)}</Text>
+          <View style={styles.sliderValueInCircleStyle}>
+            <Text style={styles.sliderTextValueStyle}>
+              {Math.round(sliderValue)}
+            </Text>
           </View>
-          <View style={styles.circle}></View>
+          <View style={styles.circleOuterView}>
+            <View style={styles.circle} />
+          </View>
         </Animated.View>
       </View>
     </View>
   );
 };
+
 export default SliderComponent;
