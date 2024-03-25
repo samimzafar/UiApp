@@ -2,9 +2,7 @@ import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {styles} from './style';
 
-const OptionSelector = ({options}) => {
-  const [selectedOption, setSelectedOption] = useState(null);
-
+const OptionSelector = ({options, selectedOption, setSelectedOption}) => {
   const handleSelect = option => {
     setSelectedOption(option);
   };

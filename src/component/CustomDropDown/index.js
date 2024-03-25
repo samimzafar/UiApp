@@ -1,40 +1,35 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, TextInput, Text, TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {FlatListIndicator} from '@fanchenbao/react-native-scroll-indicator';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {AppColors} from '../../utils/AppColors';
 import {styles} from './styles';
+import {getListingOnSelectedTopic} from '../../utils/Methods';
 
-const data = [
-  'Board games revival',
-  'Comedy trends',
-  'Amusement parks',
-  'Escape rooms',
-  'Street performances',
-  'Online challenges',
-  'Festivals impact',
-  'Crafting movement',
-  'Social gaming',
-  'Virtual reality',
-  'Gamified learning',
-  'Education systems',
-  'Bilingual benefits',
-];
-
-export default function CustomDropdown({listindData, selectedTitle}) {
+const CustomDropdown = ({selectedTopic}) => {
   const [searchText, setSearchText] = useState('');
-  const [filteredData, setFilteredData] = useState(data);
-  const [selectedItem, setSelectedItem] = useState('Select');
+  const [filteredData, setFilteredData] = useState([]);
+  const [selectedItem, setSelectedItem] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
+
+  useEffect(() => {
+    if (selectedTopic) {
+      const topicData = getListingOnSelectedTopic(selectedTopic);
+      setFilteredData(topicData);
+      setSelectedItem('');
+    }
+  }, [selectedTopic]);
 
   const handleSearch = text => {
     setSearchText(text);
     setSelectedItem('');
-    const filtered = data.filter(item =>
+    const filtered = filteredData.filter(item =>
       item.toLowerCase().includes(text.toLowerCase()),
     );
-    setFilteredData(filtered);
+    setFilteredData(
+      filtered.length > 0 ? filtered : getListingOnSelectedTopic(selectedTopic),
+    );
   };
 
   const handleItemPress = item => {
@@ -49,13 +44,13 @@ export default function CustomDropdown({listindData, selectedTitle}) {
   const clearSelection = () => {
     setSearchText('');
     setSelectedItem('');
-    setFilteredData(data);
+    setFilteredData(getListingOnSelectedTopic(selectedTopic));
   };
 
   return (
     <View>
       <Text style={styles.question}>
-        Which type of “Education“content are you creating?
+        Which type of "{selectedTopic}" content are you creating?
       </Text>
       <LinearGradient
         colors={AppColors.bluePinkPurpleGradient}
@@ -104,4 +99,6 @@ export default function CustomDropdown({listindData, selectedTitle}) {
       )}
     </View>
   );
-}
+};
+
+export default CustomDropdown;
