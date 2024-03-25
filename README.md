@@ -32,8 +32,6 @@ A step by step series of examples that tell you how to get a development environ
 3. **Once Node Modules installed:**
    ```bash
    cd ios && pod install && cd .. ( No need this for android )
-4. **Run the Application ( ios/Android ):**
-   ```bash
 
 - If you are using Xcode 12.5 or higher got to /ios and execute `pod install --`repo-update`
 - Run `npm run ios` or `npm run android` to start your application!
