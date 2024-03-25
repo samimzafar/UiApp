@@ -12,6 +12,10 @@ What things you need to install the software and how to install them:
 
 - Node.js (Ensure you have Node version >=18 installed)
 - npm (Comes with Node.js)
+- Cocoapods 1.10.1
+- Xcode >11
+- JDK 17
+- Android Studio and Android SDK
 - React Native CLI (Install it globally with `npm install -g react-native-cli`)
 - An emulator or physical device to run the app
 
@@ -24,11 +28,14 @@ A step by step series of examples that tell you how to get a development environ
    git clone https://github.com/samimzafar/UiApp
 2. **Install Node Modules:**
    ```bash
-   npm install
+- Go to your project's root folder and run `npm install`.
 3. **Once Node Modules installed:**
    ```bash
    cd ios && pod install && cd .. ( No need this for android )
-4. **Run the Application ( ios/Android ) via Xcode/Android Studio:**
+4. **Run the Application ( ios/Android ):**
    ```bash
-  open Xcode select .xcworkspace inside the ios folder and run it on Xcode, it will run the ios app
+
+- If you are using Xcode 12.5 or higher got to /ios and execute `pod install --`repo-update`
+- Run `npm run ios` or `npm run android` to start your application!
+  
 
