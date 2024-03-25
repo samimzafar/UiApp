@@ -29,7 +29,7 @@ const CustomDropdown = ({selectedTopic}) => {
         width: width(90),
       }}>
       <Text style={styles.question}>
-        Which type of "{selectedTopic}" content are you creating?
+        Which type of "{selectedTopic}" content are you{`\n`} creating?
       </Text>
       <LinearGradient
         colors={
