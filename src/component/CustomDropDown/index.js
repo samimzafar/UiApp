@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, TextInput, Text, TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {FlatListIndicator} from '@fanchenbao/react-native-scroll-indicator';
@@ -6,6 +6,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {AppColors} from '../../utils/AppColors';
 import {styles} from './styles';
 import useCustomDropdown from '../../hooks/useCustomDropDown';
+
 const CustomDropdown = ({selectedTopic}) => {
   const {
     searchText,
@@ -18,10 +19,17 @@ const CustomDropdown = ({selectedTopic}) => {
     clearSelection,
   } = useCustomDropdown(selectedTopic);
 
+  const [selectedItemIndex, setSelectedItemIndex] = useState(null);
+
+  const handlePressItem = (item, index) => {
+    handleItemPress(item);
+    setSelectedItemIndex(index);
+  };
+
   return (
     <View style={styles.mainContainer}>
       <Text style={styles.question}>
-        Which type of "{selectedTopic}" content are you{`\n`} creating?
+        Which type of "{selectedTopic}" content are you {'\n'} creating?
       </Text>
       <LinearGradient
         colors={
@@ -60,9 +68,17 @@ const CustomDropdown = ({selectedTopic}) => {
               alwaysBounceVertical: true,
               style: styles.dropdownListHeight,
               data: filteredData,
-              renderItem: ({item}) => (
-                <TouchableOpacity onPress={() => handleItemPress(item)}>
-                  <Text style={styles.listTitleStyle}>{item}</Text>
+              renderItem: ({item, index}) => (
+                <TouchableOpacity onPress={() => handlePressItem(item, index)}>
+                  <Text
+                    style={[
+                      styles.listTitleStyle,
+                      selectedItemIndex === index && {
+                        backgroundColor: AppColors.bluePurple,
+                      },
+                    ]}>
+                    {item}
+                  </Text>
                 </TouchableOpacity>
               ),
             }}
